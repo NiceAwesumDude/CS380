@@ -41,7 +41,13 @@ class BinarySearchTree{
    pre-order traversal
    */
    public void preOrderTraversal(Node root){
-      //implement me
+      System.out.print(root.value + ", ");
+      if (root.left != null) {
+         preOrderTraversal(root.left);
+      }
+      if (root.right != null) {
+         preOrderTraversal(root.right);
+      }
    }
 
    
@@ -81,6 +87,7 @@ class BinarySearchTree{
    */
    public int getMin(Node root){
       //implement me
+      return -1;
    }
   
   
@@ -91,6 +98,7 @@ class BinarySearchTree{
    */
    public int getMax(Node root){
 	  //implement me
+     return -1;
    }
    
    
@@ -136,12 +144,12 @@ class BinarySearchTree{
 public class TreeDemo{
    public static void main(String[] args){
       BinarySearchTree t1  = new BinarySearchTree();
-      t1.insert(24);
-      t1.insert(80);
-      t1.insert(18);
-      t1.insert(9);
-      t1.insert(90);
-      t1.insert(22);
+      t1.insert(t1.root, 24);
+      t1.insert(t1.root, 80);
+      t1.insert(t1.root, 18);
+      t1.insert(t1.root, 9);
+      t1.insert(t1.root, 90);
+      t1.insert(t1.root, 22);
             
       System.out.print("in-order :   ");
       t1.inOrderTraversal(t1.root);
