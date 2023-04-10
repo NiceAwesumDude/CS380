@@ -60,11 +60,11 @@ class BinarySearchTree{
    */
    public void inOrderTraversal(Node root){
       if (root.left != null) {
-         preOrderTraversal(root.left);
+         inOrderTraversal(root.left);
       }
       System.out.print(root.value + ", ");
       if (root.right != null) {
-         preOrderTraversal(root.right);
+         inOrderTraversal(root.right);
       }
    }
    
@@ -75,10 +75,10 @@ class BinarySearchTree{
    */
    public void postOrderTraversal(Node root){
       if (root.left != null) {
-         preOrderTraversal(root.left);
+         postOrderTraversal(root.left);
       }
       if (root.right != null) {
-         preOrderTraversal(root.right);
+         postOrderTraversal(root.right);
       }
       System.out.print(root.value + ", ");
    }
@@ -137,8 +137,13 @@ class BinarySearchTree{
    with a largest key
    */
    public int getMax(Node root){
-	  //implement me
-     return -1;
+	   // Check if can step right
+      if (root.right != null) {
+         return getMin(root.right);
+      }
+      
+      // Return right-most node value
+      return root.value;
    }
    
    
