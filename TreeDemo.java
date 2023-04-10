@@ -20,7 +20,10 @@ class BinarySearchTree{
    */
    public Node insert(Node root, int value){
       //base case
-      if(root == null){
+      if(this.root == null){
+         this.root = new Node(value);
+         return this.root;
+      } else if (root == null) {
          root = new Node(value);
          return root;
       }
@@ -118,8 +121,13 @@ class BinarySearchTree{
    with a smallest key
    */
    public int getMin(Node root){
-      //implement me
-      return -1;
+      // Check if can step left
+      if (root.left != null) {
+         return getMin(root.left);
+      }
+      
+      // Return left-most node value
+      return root.value;
    }
   
   
