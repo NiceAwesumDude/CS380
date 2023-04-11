@@ -44,11 +44,14 @@ class BinarySearchTree{
    pre-order traversal
    */
    public void preOrderTraversal(Node root){
-      System.out.print(root.value + ", ");
-      if (root.left != null) {
+   
+      System.out.print(root.value + ", "); // Value
+      
+      if (root.left != null) { // Left
          preOrderTraversal(root.left);
       }
-      if (root.right != null) {
+      
+      if (root.right != null) { // Right
          preOrderTraversal(root.right);
       }
    }
@@ -59,11 +62,14 @@ class BinarySearchTree{
    in-order traversal
    */
    public void inOrderTraversal(Node root){
-      if (root.left != null) {
+   
+      if (root.left != null) { // Left
          inOrderTraversal(root.left);
       }
-      System.out.print(root.value + ", ");
-      if (root.right != null) {
+      
+      System.out.print(root.value + ", "); // Value
+      
+      if (root.right != null) { // Right
          inOrderTraversal(root.right);
       }
    }
@@ -74,13 +80,16 @@ class BinarySearchTree{
    post-order traversal
    */
    public void postOrderTraversal(Node root){
-      if (root.left != null) {
+   
+      if (root.left != null) { // Left
          postOrderTraversal(root.left);
       }
-      if (root.right != null) {
+      
+      if (root.right != null) { // Right
          postOrderTraversal(root.right);
       }
-      System.out.print(root.value + ", ");
+      
+      System.out.print(root.value + ", "); // Value
    }
    
    
@@ -122,12 +131,13 @@ class BinarySearchTree{
    with a smallest key
    */
    public int getMin(Node root){
-      // Check if can step left
+   
+      // Recursive step, Check if can step left
       if (root.left != null) {
          return getMin(root.left);
       }
       
-      // Return left-most node value
+      // Base case, Return left-most node value
       return root.value;
    }
   
@@ -138,12 +148,13 @@ class BinarySearchTree{
    with a largest key
    */
    public int getMax(Node root){
-	   // Check if can step right
+   
+	   // Recursive step, Check if can step right
       if (root.right != null) {
          return getMin(root.right);
       }
       
-      // Return right-most node value
+      // Base case, Return right-most node value
       return root.value;
    }
    
