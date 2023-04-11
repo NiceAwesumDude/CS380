@@ -19,19 +19,19 @@ class BinarySearchTree{
    recursive insert method
    */
    public Node insert(Node root, int value){
-      //base case
-      if(this.root == null){
+      // Base case
+      if(this.root == null){ // Check if root is null, if so replace
          this.root = new Node(value);
          return this.root;
-      } else if (root == null) {
+      } else if (root == null) { // Else Check if current node is null, if so replace
          root = new Node(value);
          return root;
       }
       
-      //recursive step
-      if(value < root.value){
+      // Recursive step
+      if(value < root.value){ // If not null, step left if value is lesser
          root.left = insert(root.left, value); 
-      }else{
+      } else { // Step right if value is greater or equal
          root.right = insert(root.right, value);
       }
       
@@ -90,7 +90,8 @@ class BinarySearchTree{
    with a specific value
    */
    public boolean find(Node root, int key){
-	   // Declare result variable
+	   
+      // Declare result variable
       boolean result = false;
       
       // Check key
